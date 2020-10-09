@@ -14,10 +14,10 @@ export class Posts {
   description: string;
 
   @Column()
-  image_url: string;
+  image: string;
 
   @Column()
-  hashtags: JSON;
+  hashtags: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
