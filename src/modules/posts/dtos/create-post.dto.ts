@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsNotEmpty, IsString, IsUrl } from 'class-validator';
+import { IsNotEmpty, IsString, IsUrl } from 'class-validator';
 
 export class CreatePostDto {
   @ApiProperty()
@@ -12,6 +12,6 @@ export class CreatePostDto {
   image_url?: string;
 
   @ApiProperty()
-  @IsArray()
-  hashtags?: string[];
+  @IsString()
+  hashtags?: string;
 }
