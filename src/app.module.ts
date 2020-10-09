@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { resolve } from 'path';
+import { PostsModule } from './modules/posts/posts.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { resolve } from 'path';
       ],
       synchronize: process.env.DATABASE_SYNC === 'true',
     }),
+    PostsModule,
   ],
 })
 export class AppModule {}
