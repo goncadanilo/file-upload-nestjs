@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -20,5 +21,10 @@ export class PostsController {
       ...data,
       image: file?.filename,
     });
+  }
+
+  @Get()
+  async findAllPosts() {
+    return this.postsService.findAllPosts();
   }
 }
