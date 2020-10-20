@@ -10,6 +10,7 @@ describe('PostsController', () => {
 
   const mockPostsService = {
     createPost: jest.fn(),
+    findAllPosts: jest.fn(),
   };
 
   beforeAll(async () => {
@@ -24,6 +25,7 @@ describe('PostsController', () => {
 
   beforeEach(() => {
     mockPostsService.createPost.mockReset();
+    mockPostsService.findAllPosts.mockReset();
   });
 
   it('should be defined', () => {
@@ -64,6 +66,18 @@ describe('PostsController', () => {
       expect(createdPost).toMatchObject(mockPost);
       expect(mockPostsService.createPost).toBeCalledWith({ ...post });
       expect(mockPostsService.createPost).toBeCalledTimes(1);
+    });
+  });
+
+  describe('when search all posts', () => {
+    it('should find all posts and return them', async () => {
+      mockPostsService.findAllPosts.mockReturnValue([mockPost, mockPost]);
+
+      const posts = await postsController.findAllPosts();
+
+      expect(posts).toHaveLength(2);
+      expect(posts).toStrictEqual([mockPost, mockPost]);
+      expect(mockPostsService.findAllPosts).toBeCalledTimes(1);
     });
   });
 });

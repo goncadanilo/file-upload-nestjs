@@ -11,6 +11,7 @@ describe('PostsService', () => {
   const mockRepository = {
     create: jest.fn(),
     save: jest.fn(),
+    find: jest.fn(),
   };
 
   beforeAll(async () => {
@@ -28,6 +29,7 @@ describe('PostsService', () => {
   beforeEach(() => {
     mockRepository.create.mockReset();
     mockRepository.save.mockReset();
+    mockRepository.find.mockReset();
   });
 
   it('should be defined', () => {
@@ -53,6 +55,18 @@ describe('PostsService', () => {
       expect(mockRepository.save).toBeCalledWith(mockPost);
       expect(mockRepository.create).toBeCalledTimes(1);
       expect(mockRepository.save).toBeCalledTimes(1);
+    });
+  });
+
+  describe('when search all posts', () => {
+    it('should find all posts', async () => {
+      mockRepository.find.mockReturnValue([mockPost, mockPost]);
+
+      const posts = await postsService.findAllPosts();
+
+      expect(posts).toHaveLength(2);
+      expect(posts).toStrictEqual([mockPost, mockPost]);
+      expect(mockRepository.find).toBeCalledTimes(1);
     });
   });
 });
