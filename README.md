@@ -3,6 +3,8 @@
 </h1>
 
 <p align="center">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/languages/count/goncadanilo/file-upload-nestjs.svg">
+  
   <a href="https://github.com/goncadanilo/file-upload-nestjs/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/goncadanilo/file-upload-nestjs.svg">
   </a>
