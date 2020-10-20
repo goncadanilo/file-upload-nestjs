@@ -46,6 +46,24 @@ describe('PostsController', () => {
 
       expect(createdPost).toHaveProperty('id', 1);
       expect(createdPost).toMatchObject(mockPost);
+      expect(mockPostsService.createPost).toBeCalledWith({ ...post });
+      expect(mockPostsService.createPost).toBeCalledTimes(1);
+    });
+
+    it('should be able create a post without an image', async () => {
+      mockPostsService.createPost.mockReturnValue(mockPost);
+
+      const post = {
+        description: mockPost.description,
+        hashtags: mockPost.hashtags,
+      };
+
+      const createdPost = await postsController.createPost(null, post);
+
+      expect(createdPost).toHaveProperty('id', 1);
+      expect(createdPost).toMatchObject(mockPost);
+      expect(mockPostsService.createPost).toBeCalledWith({ ...post });
+      expect(mockPostsService.createPost).toBeCalledTimes(1);
     });
   });
 });
