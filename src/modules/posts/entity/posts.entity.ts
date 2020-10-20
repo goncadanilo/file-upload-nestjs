@@ -13,11 +13,11 @@ export class Posts {
   @Column()
   description: string;
 
-  @Column()
-  image_url: string;
+  @Column({ nullable: true })
+  image: string;
 
-  @Column()
-  hashtags: JSON;
+  @Column({ nullable: true })
+  hashtags: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

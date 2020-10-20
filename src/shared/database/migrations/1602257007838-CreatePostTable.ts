@@ -17,13 +17,13 @@ export class CreatePostTable1602257007838 implements MigrationInterface {
         isNullable: false,
       },
       {
-        name: 'image_url',
+        name: 'image',
         type: 'varchar',
         isNullable: true,
       },
       {
         name: 'hashtags',
-        type: 'json',
+        type: 'varchar',
         isNullable: true,
       },
       {
