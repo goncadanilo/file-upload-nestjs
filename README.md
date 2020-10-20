@@ -46,7 +46,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Esse projeto é um sistema de upload de arquivos desenvolvido para fins de estudo utilizando o framework [NestJS](https://nestjs.com/). A aplicação consiste na criação de posts contendo descrição, hashtags e a imagem para fazer o upload. Também é possível visualizar todos os posts simulando um feed de alguma rede social.
+Esse projeto é um sistema de upload de arquivos desenvolvido para fins de estudo utilizando o framework [NestJS](https://nestjs.com/). A aplicação consiste na criação de posts contendo descrição, hashtags e a imagem para fazer o upload. Também é possível visualizar todos os posts, simulando o feed de uma rede social.
 
 ## ⚡ Como rodar
 
